@@ -35,12 +35,12 @@ public class ServiceRegistryDemoApplication {
 	        return this.discoveryClient.getInstances(applicationName);
 	    }
 	    
-		@RequestMapping("/admin")
+		@RequestMapping("/")
 		public String home() {
 			// This is useful for debugging
 			// When having multiple instance of gallery service running at different ports.
 			// We load balance among them, and display which instance received the request.
-			return "Hello from Gallery Service running at port: " + env.getProperty("local.server.port");
+			return "Hello from SpringCloud Service running at port: " + env.getProperty("local.server.port");
 		}
 	}
 }
